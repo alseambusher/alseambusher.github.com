@@ -1,0 +1,117 @@
+body {
+	font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+	font-size: 13px;
+}
+
+.doodle {
+	width: 469px; height: 162px;
+	margin: 40px auto;
+	
+	position: relative;
+}
+
+.animate div {
+	width: 67px; height: 54px;
+	float: left;
+	position: relative;
+}
+
+.doodle .animate {
+	position: relative;
+	width: 100%; height: 100%;
+	background: url(images/horse.jpg);
+}
+
+.doodle input:checked ~ .animate {
+	/* We will set a delay so that the rewind effect can occur */
+	-webkit-animation: horse-ride .5s steps(12, end) infinite 5s;
+	-moz-animation: horse-ride .5s steps(12, end) infinite 5s;
+	animation: horse-ride .5s steps(12, end) infinite 5s;
+	
+	/* Imitating the Rewind effect before real animation starts */
+	background-position: -2412px 0;
+	-webkit-transition: all 5s cubic-bezier(0.550, 0.055, 0.675, 0.190);
+	-moz-transition: all 5s cubic-bezier(0.550, 0.055, 0.675, 0.190);
+	transition: all 5s cubic-bezier(0.550, 0.055, 0.675, 0.190);
+}
+.animate div:after {
+	content: '';
+	
+	position: absolute;
+	top: 0px; bottom: 0px; left: 0px; right: 0px;
+	z-index: 2;
+	
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	
+	background: rgba(255, 255, 255, 0.6);
+	
+	-webkit-box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+	box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+}
+.doodle div.g:after {
+	background: rgba(53, 97, 182, 0.5);
+}
+.doodle div.o:after,
+.doodle div.e:after {
+	background: rgba(230, 43, 36, 0.5);
+}
+/* :nth-last-of-type(1) or :last-of-type not working with ::after */
+.doodle div.o.play:after {
+	background: rgba(227, 230, 36, 0.6);
+	pointer-events: none;
+}
+.doodle div.l:after {
+	background: rgba(85, 151, 78, 0.6);
+}
+
+/* player */
+.doodle label {
+	cursor: pointer;
+	display: inline-block;
+	width: 68px; height: 55px;
+	z-index: 2;
+	position: absolute;
+	
+	top: 55px;
+	left: 200px;
+}
+.doodle label:after {
+	content: '';
+	
+	position: absolute;
+	top: 0px; bottom: 0px; left: 0px; right: 0px;
+	z-index: 2;
+	
+	background: rgba(227, 230, 36, 0);
+}
+
+.doodle input {
+	display: none;
+}
+.doodle input:checked + label {
+	overflow: hidden;
+}
+.doodle input:checked + label img {
+	margin-left: -68px;
+	-webkit-transition: margin 1s ease-in;
+}
+.doodle input:unchecked + label img {
+	margin-left: 0;
+}
+
+@-webkit-keyframes horse-ride {
+	0% { background-position: 0 0; }
+	100% { background-position: -804px 0; }
+}
+
+@-moz-keyframes horse-ride {
+	0% { background-position: 0 0; }
+	100% { background-position: -804px 0; }
+}
+
+@keyframes horse-ride {
+	0% { background-position: 0 0; }
+	100% { background-position: -804px 0; }
+}
