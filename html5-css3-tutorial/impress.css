@@ -721,7 +721,22 @@ a:focus {
     text-wrap:unrestricted;
 }
 
-input{
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input{
   display: inline-block;
   height: 18px;
   padding: 4px;
@@ -771,4 +786,57 @@ input[type="color"]:focus,
 }
 .slide span{
     font-size: 0.8em;
+}
+.small{
+    font-size: 0.8em;
+}
+.translator, .scaler,.combine, .skew{
+    background: #eee;
+width: 200px;
+}
+.translator:hover{
+    -webkit-transform: translate(100px,100px);
+    -moz-transform: translate(100px,100px);
+    -ms-transform: translate(100px,100px);
+    -o-transform: translate(100px,100px);
+    transform: translate(100px,100px);
+    -webkit-transition-duration: 0.2s;
+-moz-transition-duration: 0.2s;
+-o-transition-duration: 0.2s;
+transition-duration: 0.2s;
+cursor: pointer;
+    
+}
+.scaler:hover{
+    -webkit-transform: scale(1.5,0.25);
+-moz-transform: scale(1.5,0.25);
+-ms-transform: scale(1.5,0.25);
+-o-transform: scale(1.5,0.25);
+transform: scale(1.5,0.25);
+   -webkit-transition-duration: 0.2s;
+-moz-transition-duration: 0.2s;
+-o-transition-duration: 0.2s;
+transition-duration: 0.2s;
+cursor: pointer;
+}
+
+.combine:hover{
+    -webkit-transform:rotate(10deg) translateX(100px) scale(1.5);
+-moz-transform:rotate(10deg) translateX(100px) scale(1.5);
+-ms-transform:rotate(10deg) translateX(100px) scale(1.5);
+-o-transform:rotate(10deg) translateX(100px) scale(1.5);
+transform:rotate(10deg) translateX(100px) scale(1.5);
+   -webkit-transition-duration: 0.2s;
+-moz-transition-duration: 0.2s;
+-o-transition-duration: 0.2s;
+transition-duration: 0.2s;
+cursor: pointer;
+}
+.skew{
+    -webkit-transform: skew(15deg, 4deg);
+-moz-transform: skew(15deg, 4deg);
+-ms-transform: skew(15deg, 4deg);
+-o-transform: skew(15deg, 4deg);
+transform: skew(15deg, 4deg);
+
 }
