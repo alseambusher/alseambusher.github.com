@@ -1,40 +1,44 @@
-/*AFTER = 1401605999
-TOKEN = '[Access Token]'
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
 
-function get_posts():
-    """Returns dictionary of id, first names of people who posted on my wall
-    between start and end time"""
-    query = ("SELECT post_id, actor_id, message FROM stream WHERE "
-            "filter_key = 'others' AND source_id = me() AND "
-            "created_time > 1353233754 LIMIT 85")
-
-    payload = {'q': query, 'access_token': TOKEN}
-    r = requests.get('https://graph.facebook.com/fql', params=payload)
-    result = json.loads(r.text)
-    return result['data']
-
-function commentall(wallposts):
-    """Comments thank you on all posts"""
-    #TODO convert to batch request later
-    for wallpost in wallposts:
-    	if wallpost['post_id'] in done['data']:
-            continue
-
-        r = requests.get('https://graph.facebook.com/%s' %
-                wallpost['actor_id'])
-        url = 'https://graph.facebook.com/%s/comments' % wallpost['post_id']
-        user = json.loads(r.text)
-        message = 'Thank You %s :)' % user['first_name']
-        payload = {'access_token': TOKEN, 'message': message}
-        print message
-        try:
-            s = requests.post(url, data=payload)
-            done['data'].append(wallpost['post_id'])
-        except:
-            json.dump(done,file("done.json","w"))
-            exit(1)
-
-        print "Wall post %s done" % wallpost['post_id']
-    
-commentall(get_posts())
-*/
+function wish(){
+    form = $("#form").serializeObject()
+    // convert to local epoch
+    date = $("#date").val().split("-")
+    created_time = new Date(date[1]+"/"+date[2]+"/"+date[0]).getTime()/1000;
+    query = "SELECT post_id, actor_id, message FROM stream WHERE filter_key = 'others' AND source_id = me() AND created_time > "+created_time+" LIMIT 200"
+    console.log(query)
+    $(".alert").html("Obtaining all posts....")
+    payload = {'q': query, 'access_token': form.access_token}
+    // first get all posts
+    r = $.getJSON('https://graph.facebook.com/fql', payload, function(wallposts){
+    		$(".alert").html("Obtaining user data")
+    		console.log(wallposts.data.length)
+    		$.each(wallposts.data, function(index,wallpost){
+			// get user detail
+			$.getJSON('https://graph.facebook.com/'+wallpost.actor_id, function(user){
+				url = "https://graph.facebook.com/"+wallpost.post_id+"/comments"
+				message = form.message.replace("RePlAcE", user.first_name).replace("rEpLaCe", user.last_name)
+        			payload = {'access_token': form.access_token, 'message': message}
+				$.post(url, payload, function(data){
+    					$(".alert").html(message)
+				})
+				console.log(message)
+			});
+		});
+    	});
+}
