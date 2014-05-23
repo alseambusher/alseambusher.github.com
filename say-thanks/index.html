@@ -1,0 +1,42 @@
+<!doctype html>
+<head>
+<title> Say Thanks to birthday wishes on Facebook </title>
+<link rel="stylesheet" href="bootstrap.min.css" />
+<script src="jquery.min.js"></script>
+<script src="wish.js"></script>
+<style>
+.container{
+	background: #fff;
+	padding: 20px;
+
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Say Thanks to birthday wishes on Facebook</h1>
+<hr/>
+	<h3>Get access code</h3>
+	<ol>
+		<li>Go to <a href="http://developers.facebook.com"> developers.facebook.com</a>.</li>
+		<li>Under Tools in the menu, go to Graph explorer.</li>
+		<li>Click on Get Access Token. Paste the token here</li>
+	</ol>
+	<hr>
+	<form id="form">
+		<textarea placeholder="Access Token" name="access-token"></textarea><br>
+		<input type="date" name="time"> Your Birthday<br>
+		<hr>
+		<h3> Choose Message </h3>
+		<input type="radio" name="message"> Thanks<br>
+		<input type="radio" name="message"> Thanks &lt;first name&gt;<br>
+		<input type="radio" name="message"> Thanks :)<br>
+		<input type="radio" name="message"> Thanks &lt;first name&gt; :)<br>
+		<hr>
+		<button class="btn btn-primary" onclick="wish()">Say Thanks</button>
+	</form>
+	<i> Find me at <a href="http://lifepluslinux.blogspot.in">lifepluslinux.blogspot.in</a> </i><br>
+	NOTE: We <b>do not</b> save any of your credentials. Don't believe me? See the source code :P
+</div>
+</body>
+</html>
