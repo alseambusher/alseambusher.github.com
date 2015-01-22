@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome  --app="https://web.whatsapp.com/" --user-data-dir="/Users/salse/Applications/WhatsApp.app/Contents/Profile" "$@"
