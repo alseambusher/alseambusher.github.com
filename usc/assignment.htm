@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+	<title>Los Angeles</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+		function getResults(city){
+			var url = "http://dbpedia.org/data/"+city+".json";
+			//$.getJSON(url, function(data){
+				//console.log(data);
+			//});
+			$.ajax({
+				url: url,
+				datatype: "jsonp",
+				success: function(data){
+					console.log(data);
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+<div class="container" style="padding-top:20px">
+	<h2>Programming Assignment for Directed Research</h2>
+	By <i>Suresh Alse</i><br/><br/>
+	<a class="btn btn-primary" onclick="getResults('Los_Angeles')">Los Angeles</a>
+	<a class="btn btn-primary">Mountain View</a>
+	<a class="btn btn-primary">San Fransisco</a>
+	<div id="result">
+		<hr />
+		<table class="table">
+			<tr>
+				<td>Total Population</td>
+				<td>TODO</td>
+			</tr>
+			<tr>
+				<td>Population Density</td>
+				<td>TODO</td>
+			</tr>
+			<tr>
+				<td>Total Area</td>
+				<td>TODO</td>
+			</tr>
+		</table>
+		<hr />
+	</div>
+</div>
+</body>
+</html>
