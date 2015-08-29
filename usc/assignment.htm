@@ -5,45 +5,90 @@
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script>
+		jQuery.support.cors = true;
+		window.onload = function(){
+			$("#result").fadeOut(0);
+			$("#loading").fadeOut(0);
+		}
 		function getResults(city){
-			var url = "http://dbpedia.org/data/"+city+".json";
-			//$.getJSON(url, function(data){
-				//console.log(data);
-			//});
+			$("#result").fadeOut(0);
+			$("#loading").fadeIn();
 			$.ajax({
-				url: url,
-				datatype: "jsonp",
-				success: function(data){
-					console.log(data);
-				}
+				// Doing this as per problem statement. However we should use dbpedia sparql to make this faster
+    				url: "http://dbpedia.org/data/"+city+".json",
+    				dataType: "jsonp",
+    				success: function( response ) {
+					$("#loading").fadeOut(0);
+					var populationTotal = response["http://dbpedia.org/resource/"+city]["http://dbpedia.org/ontology/populationTotal"][0]["value"];
+					var populationDensity = response["http://dbpedia.org/resource/"+city]["http://dbpedia.org/ontology/populationDensity"][0]["value"];
+					var areaTotal = response["http://dbpedia.org/resource/"+city]["http://dbpedia.org/ontology/areaTotal"][0]["value"];
+
+					// choosing arbitary numbers to calculate percentage for visualization
+					$("#populationTotal").css("width",(parseInt(populationTotal) * 100 / 5000000) + "%");
+					$("#populationTotal").html(populationTotal);
+					$("#populationDensity").css("width",(parseInt(populationDensity) * 100 / 7000) + "%");
+					$("#populationDensity").html(populationDensity);
+					$("#areaTotal").css("width",(parseInt(areaTotal) * 100 / 2000000000) + "%");
+					$("#areaTotal").html(areaTotal);
+					$("#result").fadeIn();
+    				}
 			});
 		}
 	</script>
+	<style>
+		.progress {
+			min-width: 300px !important;
+		}
+	</style>
 </head>
 <body>
 <div class="container" style="padding-top:20px">
 	<h2>Programming Assignment for Directed Research</h2>
 	By <i>Suresh Alse</i><br/><br/>
 	<a class="btn btn-primary" onclick="getResults('Los_Angeles')">Los Angeles</a>
-	<a class="btn btn-primary">Mountain View</a>
-	<a class="btn btn-primary">San Fransisco</a>
-	<div id="result">
-		<hr />
-		<table class="table">
+	<a class="btn btn-primary" onclick="getResults('San_Diego')">San Diego</a>
+	<a class="btn btn-primary" onclick="getResults('San_Francisco')">San Fransisco</a>
+	<br />
+	<br />
+	<div >
+		<div class="progress" id="loading">
+  			<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    				Loading....
+  			</div>
+		</div>
+
+		<table class="table" id="result">
 			<tr>
 				<td>Total Population</td>
-				<td>TODO</td>
+				<td>
+					<div class="progress">
+  						<div class="progress-bar progress-bar-striped progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%" id="populationTotal">
+    							0
+  						</div>
+					</div>
+				</td>
 			</tr>
 			<tr>
 				<td>Population Density</td>
-				<td>TODO</td>
+				<td>
+					<div class="progress">
+  						<div class="progress-bar progress-bar-striped progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%" id="populationDensity">
+    							0
+  						</div>
+					</div>
+				</td>
 			</tr>
 			<tr>
 				<td>Total Area</td>
-				<td>TODO</td>
+				<td>
+					<div class="progress">
+  						<div class="progress-bar progress-bar-striped progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%" id="areaTotal">
+    							0
+  						</div>
+					</div>
+				</td>
 			</tr>
 		</table>
-		<hr />
 	</div>
 </div>
 </body>
