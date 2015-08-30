@@ -13,15 +13,25 @@
 		function getResults(city){
 			$("#result").fadeOut(0);
 			$("#loading").fadeIn();
+			var url = "http://dbpedia.org/sparql?default-graph-uri=http://dbpedia.org&query="
+			var url = url + encodeURIComponent([ 	
+					"PREFIX dbo: <http://dbpedia.org/ontology/>",
+					"PREFIX dbpedia: <http://dbpedia.org/resource/>",
+					"select * where",
+					"{dbpedia:"+city+" dbo:populationTotal ?populationTotal .",
+					"dbpedia:"+city+" dbo:areaTotal ?areaTotal .",
+					"dbpedia:"+city+" dbo:populationDensity ?populationDensity}"
+				].join("")) + "&format=application/json";
+
 			$.ajax({
 				// Doing this as per problem statement. However we should use dbpedia sparql to make this faster
-    				url: "http://dbpedia.org/data/"+city+".json",
+    				url: url,
     				dataType: "jsonp",
     				success: function( response ) {
 					$("#loading").fadeOut(0);
-					var populationTotal = response["http://dbpedia.org/resource/"+city]["http://dbpedia.org/ontology/populationTotal"][0]["value"];
-					var populationDensity = response["http://dbpedia.org/resource/"+city]["http://dbpedia.org/ontology/populationDensity"][0]["value"];
-					var areaTotal = response["http://dbpedia.org/resource/"+city]["http://dbpedia.org/ontology/areaTotal"][0]["value"];
+					var populationTotal = response["results"]["bindings"][0]["populationTotal"]["value"];
+					var populationDensity = response["results"]["bindings"][0]["populationDensity"]["value"];
+					var areaTotal = Number(response["results"]["bindings"][0]["areaTotal"]["value"]);
 
 					// choosing arbitary numbers to calculate percentage for visualization
 					$("#populationTotal").css("width",(parseInt(populationTotal) * 100 / 5000000) + "%");
