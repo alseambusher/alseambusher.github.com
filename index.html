@@ -1,256 +1,269 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-      <meta name="theme-color" content="#2196F3">
-      <title>Suresh Alse</title>
-      <!-- CSS  -->
-      <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
-      <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="js/parallax.min.js"></script>
-   </head>
-   <style>
-      .card-content{
-      background:#39698F;
-      color:#ffffff;
-      }
-      .card-content a{
-      color:#ffffff;
-      }
-      .card-content a:hover{
-      color:#ffffff;
-      }
-   </style>
-   <body id="top" class="scrollspy">
-      <!-- Pre Loader -->
-      <div id="loader-wrapper">
-         <div id="loader"></div>
-         <div class="loader-section section-left"></div>
-         <div class="loader-section section-right"></div>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#2196F3">
+  <title>Suresh Alse</title>
+  <!-- CSS  -->
+  <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
+  <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/parallax.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+</head>
+<style>
+.card-content{
+  background:#39698F;
+  color:#ffffff;
+}
+.card-content a{
+  color:#ffffff;
+}
+.card-content a:hover{
+  color:#ffffff;
+}
+</style>
+<body id="top" class="scrollspy">
+  <!-- Pre Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <!--Navigation-->
+  <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" id="logo-container" class="brand-logo"><b>Suresh Alse</b></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="http://github.com/alseambusher">Github</a></li>
+            <li><a href="http://linkedin.com/in/sureshalse">LinkedIn</a></li>
+            <li><a href="https://github.com/alseambusher/Resume/raw/master/main-pub.pdf">Resume</a></li>
+            <li><a href="http://lifepluslinux.blogspot.com">Blog</a></li>
+            <li><a href="#publications">Publications</a></li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="http://github.com/alseambusher">Github</a></li>
+            <li><a href="http://linkedin.com/in/sureshalse">LinkedIn</a></li>
+            <li><a href="https://github.com/alseambusher/Resume/raw/master/main-pub.pdf">Resume</a></li>
+            <li><a href="http://lifepluslinux.blogspot.com">Blog</a></li>
+            <li><a href="#publications">Publications</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </div>
       </div>
-      <!--Navigation-->
-      <div class="navbar-fixed">
-         <nav id="nav_f" class="default_color" role="navigation">
-            <div class="container">
-               <div class="nav-wrapper">
-                  <a href="#" id="logo-container" class="brand-logo"><b>Suresh Alse</b></a>
-                  <ul class="right hide-on-med-and-down">
-                     <li><a href="http://github.com/alseambusher">Github</a></li>
-                     <li><a href="http://linkedin.com/in/sureshalse">LinkedIn</a></li>
-                     <li><a href="https://github.com/alseambusher/Resume/raw/master/main-pub.pdf">Resume</a></li>
-                     <li><a href="http://lifepluslinux.blogspot.com">Blog</a></li>
-                     <li><a href="#publications">Publications</a></li>
-                  </ul>
-                  <ul id="nav-mobile" class="side-nav">
-                     <li><a href="http://github.com/alseambusher">Github</a></li>
-                     <li><a href="http://linkedin.com/in/sureshalse">LinkedIn</a></li>
-                     <li><a href="https://github.com/alseambusher/Resume/raw/master/main-pub.pdf">Resume</a></li>
-                     <li><a href="http://lifepluslinux.blogspot.com">Blog</a></li>
-                     <li><a href="#publications">Publications</a></li>
-                  </ul>
-                  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-               </div>
+    </nav>
+  </div>
+  <!--Hero-->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="text_h center header cd-headline letters type">
+        <span>Hi, I am</span>
+        <span class="cd-words-wrapper waiting">
+          <b class="is-visible">Suresh Alse</b>
+        </span>
+        <p> I <a href="http://lifepluslinux.blogspot.com">blog</a>,
+          I <a href="http://github.com/alseambusher">code</a>, I run
+        </p>
+      </h1>
+    </div>
+  </div>
+  <!--Intro and service-->
+  <div id="intro" class="section scrollspy">
+    <div class="container">
+      <h5 class="text_h2">I am Computer Science graduate student at <a href="http://www.usc.edu">University of Southern California</a>, Los Angeles working as a student researcher at <a href="http://www.isi.edu/">Information Sciences Institute</a>.<br> Previously, I worked as a Software Engineer at <a href="https://www.intuit.com/">Intuit Inc.</a> where I worked on the development of <a href="http://quickbooks.intuit.com">QuickBooks</a>.<br> I obtained my bachelor's degree from <a href="http://nitk.ac.in">National Institute of Technology Karnataka</a>, Surathkal in 2014.<br/> I contribute to open source projects <a href="http://github.com/alseambusher">here</a> and I write technical blogs @ <a href="http://lifepluslinux.blogspot.com">Life plus Linux</a>.</h5>
+    </div>
+  </div>
+  <div id="middle-banner" data-parallax="scroll" data-image-src="/bg2.jpg">
+    <h1 class="text_h center header cd-headline letters type">
+      <span><b class="is-visible">Work experience</b> that moulded me!</span>
+    </h1>
+  </div>
+  <!-- Work Experience -->
+  <div class="section scrollspy">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content">
+              <h4>Adobe Systems</h4>
+              <h5 class="promo-caption">Summer Intern</h5>
+              <p class="light center">Working with WCMS team to build a tool to automatically migrate websites on an older version of Adobe Experience Manager to a newer version with minimal manual work.</p>
+              <p>Java, Nodejs, Bash</p>
+              <b>May '16 - Current</b>
             </div>
-         </nav>
+          </div>
+        </div>
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content" style="padding:12px">
+              <h4>Information Sciences Institute</h4>
+              <h5 class="promo-caption">Student Researcher</h5>
+              <p class="light center">Working on a python based REST service to automatically assign semantics to large data sets from heterogeneous sources.</p>
+              <p>Python, ML, AI, Flask, Spark, Elastic search.</p>
+              <b>Sep '15 - Current</b>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content">
+              <h3>Intuit Inc.</h3>
+              <h5 class="promo-caption">Software Engineer</h5>
+              <p class="light center">Worked on core development of QuickBooks, an accounting software used by several million users all over the world.</p>
+              <p>C++, C#, .NET, MFC, Agile Development.</p>
+              <b>Aug '14 - Aug '15</b>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
       </div>
-      <!--Hero-->
-      <div class="section no-pad-bot" id="index-banner">
-         <div class="container">
-            <h1 class="text_h center header cd-headline letters type">
-               <span>Hi, I am</span> 
-               <span class="cd-words-wrapper waiting">
-               <b class="is-visible">Suresh Alse</b>
-               </span>
-               <p> I <a href="http://lifepluslinux.blogspot.com">blog</a>, 
-                  I <a href="http://github.com/alseambusher">code</a>, I run
-               </p>
-            </h1>
-         </div>
+      <div class="row">
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content">
+              <h3>Intuit Inc.</h3>
+              <h5 class="promo-caption">Summer Intern</h5>
+              <p class="light center">Worked with QuickBooks android team and developed a code generator that can generate java code for new features based on old features automatically</p>
+              <p>Java, SWT, Android Development.</p>
+              <b>May - July '15</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content">
+              <h3>Bilent</h3>
+              <h5 class="promo-caption">Intern</h5>
+              <p class="light center">Worked on Kyash which is an online payment system which helps people to work in beneficial and trusted environment.</p>
+              <p>Python, webapp2, Google Appengine.</p>
+              <b>Nov - Dec '12</b>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content">
+              <h4>Indibits Web Solutions</h4>
+              <h5 class="promo-caption">Summer Intern</h5>
+              <p class="light center">Worked on an open-source wiki application.<br><br></p>
+              <p>HTML5, CSS3, JS, PHP.</p>
+              <b>May - July '12</b>
+            </div>
+          </div>
+        </div>
       </div>
-      <!--Intro and service-->
-      <div id="intro" class="section scrollspy">
-         <div class="container">
-            <h5 class="text_h2">I am Computer Science graduate student at <a href="http://www.usc.edu">University of Southern California</a>, Los Angeles working as a student researcher at <a href="http://www.isi.edu/">Information Sciences Institute</a>.<br> Previously, I worked as a Software Engineer at <a href="https://www.intuit.com/">Intuit Inc.</a> where I worked on the development of <a href="http://quickbooks.intuit.com">QuickBooks</a>.<br> I obtained my bachelor's degree from <a href="http://nitk.ac.in">National Institute of Technology Karnataka</a>, Surathkal in 2014.<br/> I contribute to open source projects <a href="http://github.com/alseambusher">here</a> and I write technical blogs @ <a href="http://lifepluslinux.blogspot.com">Life plus Linux</a>.</h5>
-         </div>
+    </div>
+  </div>
+  <div id="project-banner" data-parallax="scroll" data-image-src="/bg3.jpg">
+    <h1 class="text_h center header cd-headline letters type">
+      <span><b class="is-visible">Projects</b> Showcase</span>
+    </h1>
+  </div>
+  <!-- Interesting Links -->
+  <div class="section scrollspy">
+    <div class="container">
+      <h2 class="header text_b">Interesting Links</h2>
+      <div class="row">
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content" style="height:250px">
+              <a href="http://alseambusher.github.io/html5-css3-tutorial">
+                <h3>HTML5 CSS3 Talk</h3>
+                <p class="light center">Interactive HTML5 and CSS3 talk presentation by me at NITK</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content" style="height:250px">
+              <a href="http://alseambusher.github.io/say-thanks/">
+                <h5>Say Thanks to birthday wishes on Facebook</h5>
+                <p class="light center">Automatically say thanks to all of your friends and who have wished you happy birthday on Facebook</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4 l4">
+          <div class="center card">
+            <div class="card-content" style="height:250px">
+              <a href="https://github.com/alseambusher/music_composer">
+                <h3>Music Composer</h3>
+                <p class="light center">Compose, share, learn and play music online</p>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="middle-banner" data-parallax="scroll" data-image-src="/bg2.jpg">
-         <h1 class="text_h center header cd-headline letters type">
-            <span><b class="is-visible">Work experience</b> that moulded me!</span> 
-         </h1>
+    </div>
+  </div>
+  <hr />
+  <!-- Videos -->
+  <div class="section scrollspy">
+    <div class="container">
+      <h2 class="header text_b">Videos</h2>
+      <div class="row">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/T5LWmyKWQdc" frameborder="0" allowfullscreen></iframe>
+        <iframe width="450" height="315" src="https://www.youtube.com/embed/h9j8CezLZe0" frameborder="0" allowfullscreen></iframe>
       </div>
-      <!-- Work Experience -->
-      <div class="section scrollspy">
-         <div class="container">
-            <div class="row">
-							<div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content" style="padding:12px">
-                        <h4>Information Sciences Institute</h4>
-                        <h5 class="promo-caption">Student Researcher</h5>
-                        <p class="light center">Working on a python based REST service to automatically assign semantics to large data sets from heterogeneous sources.</p>
-                        <p>Python, ML, AI, Flask, Spark, Elastic search.</p>
-                        <b>Sep '15 - Current</b>
-                        <br>
-                        <br>
-                     </div>
-                  </div>
-               </div>
-               <div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content">
-                        <h3>Intuit Inc.</h3>
-                        <h5 class="promo-caption">Software Engineer</h5>
-                        <p class="light center">Worked on core development of QuickBooks, an accounting software used by several million users all over the world.</p>
-                        <p>C++, C#, .NET, MFC, Agile Development.</p>
-                        <b>Aug '14 - Aug '15</b>
-                        <br>
-                        <br>
-                     </div>
-                  </div>
-               </div>
-               <div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content">
-                        <h3>Intuit Inc.</h3>
-                        <h5 class="promo-caption">Summer Intern</h5>
-                        <p class="light center">Worked with QuickBooks android team and developed a code generator that can generate java code for new features based on old features automatically</p>
-                        <p>Java, SWT, Android Development.</p>
-                        <b>May - July '15</b>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row center">
-               <div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content">
-                        <h3>Bilent</h3>
-                        <h5 class="promo-caption">Intern</h5>
-                        <p class="light center">Worked on Kyash which is an online payment system which helps people to work in beneficial and trusted environment.</p>
-                        <p>Python, webapp2, Google Appengine.</p>
-                        <b>Nov - Dec '12</b>
-                     </div>
-                  </div>
-               </div>
-               <div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content">
-                        <h4>Indibits Web Solutions</h4>
-                        <h5 class="promo-caption">Summer Intern</h5>
-                        <p class="light center">Worked on an open-source wiki application.<br><br></p>
-                        <p>HTML5, CSS3, JS, PHP.</p>
-                        <b>May - July '12</b>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+      <div class="row">
+        <iframe width="497" height="280" src="https://www.youtube.com/embed/bbGgnCgv9rE" frameborder="0" allowfullscreen></iframe>
+        <iframe width="497" height="280" src="https://www.youtube.com/embed/KwDT-jdFseQ" frameborder="0" allowfullscreen></iframe>
       </div>
-      <div id="project-banner" data-parallax="scroll" data-image-src="/bg3.jpg">
-         <h1 class="text_h center header cd-headline letters type">
-            <span><b class="is-visible">Projects</b> Showcase</span> 
-         </h1>
+    </div>
+  </div>
+  <hr />
+  <div class="section scrollspy" id="publications">
+    <div class="container">
+      <h2 class="header text_b">Publications</h2>
+      <div class="row">
+        <div class="card">
+          <div class="card-content">
+            <p>Alse, S, et al, <b>“A State Transition Based Approach to Recognize Gestures Using Multi-Level Color Tracking”</b>, 2nd ICACCI, IEEE International Publishing, 2013, 704-708.</p>
+          </div>
+        </div>
       </div>
-      <!-- Interesting Links -->
-      <div class="section scrollspy">
-         <div class="container">
-            <h2 class="header text_b">Interesting Links</h2>
-            <div class="row">
-               <div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content" style="height:250px">
-                        <a href="http://alseambusher.github.io/html5-css3-tutorial">
-                           <h3>HTML5 CSS3 Talk</h3>
-                           <p class="light center">Interactive HTML5 and CSS3 talk presentation by me at NITK</p>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content" style="height:250px">
-                        <a href="http://alseambusher.github.io/say-thanks/">
-                           <h5>Say Thanks to birthday wishes on Facebook</h5>
-                           <p class="light center">Automatically say thanks to all of your friends and who have wished you happy birthday on Facebook</p>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col s12 m4 l4">
-                  <div class="center card">
-                     <div class="card-content" style="height:250px">
-                        <a href="https://github.com/alseambusher/music_composer">
-                           <h3>Music Composer</h3>
-                           <p class="light center">Compose, share, learn and play music online</p>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+      <div class="row">
+        <div class="card">
+          <div class="card-content">
+            <p>Alse, S, et al, <b>“A Real Time Multiplayer Gaming Network Platform as a Service”</b>, 8th ICCN, Elsevier International Publishing, 2014, Ch 19.</p>
+          </div>
+        </div>
       </div>
-      <hr />
-      <!-- Videos -->
-      <div class="section scrollspy">
-         <div class="container">
-            <h2 class="header text_b">Videos</h2>
-            <div class="row">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/T5LWmyKWQdc" frameborder="0" allowfullscreen></iframe>
-               <iframe width="450" height="315" src="https://www.youtube.com/embed/h9j8CezLZe0" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="row">
-               <iframe width="497" height="280" src="https://www.youtube.com/embed/bbGgnCgv9rE" frameborder="0" allowfullscreen></iframe>
-               <iframe width="497" height="280" src="https://www.youtube.com/embed/KwDT-jdFseQ" frameborder="0" allowfullscreen></iframe>
-            </div>
-         </div>
+      <div class="row">
+        <div class="card">
+          <div class="card-content">
+            <p>Alse, S, et al, <b>“Automatic Generation of Web Service Composition Templates Using WSDL Descriptions”</b>, 2nd International Conference on Information Systems Design and Intelligent Applications, Springer India, 2015, 2194-5357.</p>
+          </div>
+        </div>
       </div>
-      <hr />
-      <div class="section scrollspy" id="publications">
-         <div class="container">
-            <h2 class="header text_b">Publications</h2>
-            <div class="row">
-               <div class="card">
-                  <div class="card-content">
-                     <p>Alse, S, et al, <b>“A State Transition Based Approach to Recognize Gestures Using Multi-Level Color Tracking”</b>, 2nd ICACCI, IEEE International Publishing, 2013, 704-708.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="card">
-                  <div class="card-content">
-                     <p>Alse, S, et al, <b>“A Real Time Multiplayer Gaming Network Platform as a Service”</b>, 8th ICCN, Elsevier International Publishing, 2014, Ch 19.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="card">
-                  <div class="card-content">
-                     <p>Alse, S, et al, <b>“Automatic Generation of Web Service Composition Templates Using WSDL Descriptions”</b>, 2nd International Conference on Information Systems Design and Intelligent Applications, Springer India, 2015, 2194-5357.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
+    </div>
+  </div>
+  <!--Footer-->
+  <footer id="contact" class="page-footer default_color scrollspy">
+    <div class="container">
+      <div class="row" style="color:#fff">
+        <h3>Contact</h3>
+        <div class="g-person" data-href="//plus.google.com/u/0/108195773975784466584" data-layout="landscape" data-showcoverphoto="false" data-rel="author"></div>
+        <a href="https://twitter.com/alseambusher" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alseambusher</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </div>
-      <!--Footer-->
-      <footer id="contact" class="page-footer default_color scrollspy">
-         <div class="container">
-            <div class="row" style="color:#fff">
-               <h3>Contact</h3>
-               <div class="g-person" data-href="//plus.google.com/u/0/108195773975784466584" data-layout="landscape" data-showcoverphoto="false" data-rel="author"></div>
-               <a href="https://twitter.com/alseambusher" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @alseambusher</a>
-               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            </div>
-         </div>
-         <div class="footer-copyright default_color">
-            <div class="container">
-            </div>
-         </div>
-      </footer>
-      <!--  Scripts-->
-      <script src="min/plugin-min.js"></script>
-      <script src="js/resume.js"></script>
-   </body>
+    </div>
+    <div class="footer-copyright default_color">
+      <div class="container">
+      </div>
+    </div>
+  </footer>
+  <!--  Scripts-->
+  <script src="min/plugin-min.js"></script>
+  <script src="js/resume.js"></script>
+</body>
 </html>
